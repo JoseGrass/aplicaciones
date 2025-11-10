@@ -14,11 +14,12 @@ export default function NavBar() {
   const path = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links: LinkItem[] = [
-    { href: "/", label: "Inicio" },
-    { href: "/juegopuntos", label: "NeuroDots" },
-    { href: "/juegocultura", label: "Sube y Aprende" },
-  ];
+const links: LinkItem[] = [
+  { href: "/", label: "Inicio" },
+  { href: "/juegopuntos", label: "NeuroDots" },
+  { href: "/juegocultura", label: "Sube y Aprende" },
+  { href: "/formas", label: "Frases Rápidas" },
+];
 
   return (
     <header className={styles.header}>

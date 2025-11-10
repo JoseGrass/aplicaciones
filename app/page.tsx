@@ -20,10 +20,11 @@ export default function Home() {
       description: "Prueba que tanto sabes de colombia",
     },
     {
-      name: "ShapeFocus",
-      image: "/shapefocus.png",
+      name: "Frases Rápidas",
+      emoji: "⌨️",
+      image: "", // ← AGREGAR ESTA LÍNEA (imagen vacía)
       href: "/formas",
-      description: "Encuentra la figura que cambia entre una secuencia rápida.",
+      description: "Escribe frases colombianas contra el reloj. ¡Demuestra tu velocidad!",
     },
   ];
 
@@ -38,13 +39,25 @@ export default function Home() {
         {games.map((game) => (
           <Link href={game.href} key={game.name} className={styles.card}>
             <div className={styles.imageWrapper}>
-              <Image
-                src={game.image}
-                alt={game.name}
-                width={80}   // tamaño fijo
-                height={80}  // tamaño fijo
-                className={styles.image}
-              />
+              {game.emoji ? (
+                <div style={{
+                  fontSize: '60px',
+                  height: '80px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  {game.emoji}
+                </div>
+              ) : (
+                <Image
+                  src={game.image}
+                  alt={game.name}
+                  width={80}
+                  height={80}
+                  className={styles.image}
+                />
+              )}
             </div>
             <div className={styles.cardContent}>
               <h2>{game.name}</h2>
