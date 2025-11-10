@@ -70,7 +70,7 @@ export default function MemoryGame() {
 
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>🧠 Juego de Memoria</h1>
+      <h1 className={styles.title}>🧠 Sigue la secuencia</h1>
       <p className={styles.round}>Ronda: {round}</p>
       <p className={styles.message}>{message}</p>
 
