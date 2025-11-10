@@ -11,7 +11,7 @@ export default function Home() {
       name: "NeuroDots",
       image: "/7283055.png",
       href: "/juegopuntos",
-      description: "Pon a prueba tu memoria visual con secuencias de puntos.",
+      description: "Pon a prueba tu destreza visual con secuencias de puntos.",
     },
     {
       name: "Sube y Aprende",
