@@ -1,0 +1,234 @@
+.container {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #ffc107, #ff6b6b);
+  color: white;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.statsBar {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.stat {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.combo {
+  font-size: 1.3rem;
+  color: #ffeb3b;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.menu {
+  text-align: center;
+  max-width: 600px;
+}
+
+.instructions {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.startButton {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.startButton:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.gameArea {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.targetPhrase {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fbbf24;
+  letter-spacing: 2px;  
+  word-spacing: 15px;    
+  font-family: 'Courier New', monospace;  
+}
+
+.category {
+  font-size: 0.9rem;
+  color: #ffeb3b;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.fraseDisplay {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.char {
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.completed {
+  color: #4CAF50;
+  transform: scale(1.05);
+}
+
+.current {
+  background: rgba(255,255,255,0.3);
+  padding: 2px 4px;
+  border-radius: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.5; }
+}
+
+.input {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.input.error {
+  animation: shake 0.5s;
+  background: #ff4757;
+  color: white;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gameOverMessage {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  color: #ffeb3b;
+}
+
+.progress {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .statsBar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+
+  .stat {
+    font-size: 1rem;
+  }
+
+  .fraseDisplay {
+    font-size: 1.3rem;
+  }
+
+  .input {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .fraseDisplay {
+    font-size: 1.1rem;
+  }
+
+  .targetFrase {
+    padding: 20px;
+  }
+}
